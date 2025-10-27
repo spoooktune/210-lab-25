@@ -78,13 +78,49 @@ int main() {
     cout << setw(W) << duration.count() << endl;
 
     cout << setw(W) << "Sort";
+    
     // Vector sort
     start = high_resolution_clock::now();
     sort(codesV.begin(), codesV.end());
     end = high_resolution_clock::now();
     duration = duration_cast<milliseconds>(end - start);
     cout << setw(W) << duration.count();
+
+    // List sort
+    start = high_resolution_clock::now();
+    codesL.sort();
+    end = high_resolution_clock::now();
+    duration = duration_cast<milliseconds>(end - start);
+    cout << setw(W) << duration.count();
+
+    cout << setw(W) << "-1" << endl;
+
+    cout << setw(W) << "Insert";
+    
+    // Vector insert
+    const string y = "TESTCODE";
+    start = high_resolution_clock::now();
+    // codesV.insert(y, codesV.begin() + codesV.size());
+    end = high_resolution_clock::now();
+    duration = duration_cast<milliseconds>(end - start);
+    cout << setw(W) << duration.count();
+
+    // List insert
+    start = high_resolution_clock::now();
+    // codesL.insert(y, codesL.begin() + codesL.size());
+    end = high_resolution_clock::now();
+    duration = duration_cast<milliseconds>(end - start);
+    cout << setw(W) << duration.count();
+
+    // Set insert
+    start = high_resolution_clock::now();
+    codesS.insert(y);
+    end = high_resolution_clock::now();
+    duration = duration_cast<milliseconds>(end - start);
+    cout << setw(W) << duration.count();
+
     return 0;
+
 }
 
 /* syntax examples:
